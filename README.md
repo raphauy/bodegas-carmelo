@@ -1,4 +1,4 @@
 
 ## Bodegas de Carmelo
 
-A [Tinta](tinta.wine) project
+A [Tinta](https://tinta.wine) project
