@@ -2,7 +2,7 @@ module.exports = {
     apps: [
       {
         name: "bodegas-carmelo",
-        script: "pnpm",
+        script: "npm",
         args: "run start",
       },
     ],
