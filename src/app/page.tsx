@@ -51,6 +51,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen p-3 flex items-center justify-center">
+      <h1 className='hidden'>Bodegas de Carmelo</h1>
       <div className='flex gap-3 flex-col items-center justify-center lg:hidden'>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
           <WineryCard winery={bodegasRandomOrder[0]} />

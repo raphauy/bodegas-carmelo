@@ -10,7 +10,17 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Bodegas de Carmelo',
-  description: 'Somos un grupo de Bodegas de la ciudad de Carmelo en el Dpto. de Colonia, Uruguay🍇🍷🥂 ¡Te invitamos a conocer el tesoro del oeste!🤗'
+  description: 'Somos un grupo de Bodegas de la ciudad de Carmelo en el Dpto. de Colonia, Uruguay🍇🍷🥂 ¡Te invitamos a conocer el tesoro del oeste!🤗',
+  icons: {
+    icon: "/favicon.ico",
+  },
+  robots: {
+    index: true,
+    follow: true,    
+  },
+  authors: {name: "Raphael Carvalho", url: "https://rapha.uy"},
+  publisher: "Tinta Wine",
+  keywords: "tinta, wine, vino, carmelo, marketing, agencia, bodega, bodegas, vinos, vino"
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
