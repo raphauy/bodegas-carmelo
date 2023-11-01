@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
 
   return (
-    <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="es" className={`${GeistSans.className}`}>
       <body className={cn("dark:bg-black")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

@@ -1,7 +1,9 @@
 import { revalidatePath } from 'next/cache'
 import WineryCard from './winery-card'
 import { redirect } from 'next/navigation'
-import Refresh from './refresh'
+import Refresh from './winery-list'
+import { getRandomNumber } from './actions'
+import WineryList from './winery-list'
 
 export type Winery = {
   name: string
@@ -55,54 +57,16 @@ const bodegas: Winery[] = [
   },
 ]
 
-export default function Home() {
+export default async function Home() {
 
-  let bodegasRandomOrder = bodegas.sort(() => Math.random() - 0.5)
 
-  console.log("Rendering...");
+  console.log("Rendering...")
 
   return (
     <main className="min-h-screen p-3 flex items-center justify-center">
       <h1 className='hidden'>Bodegas de Carmelo</h1>
-      <div className='flex gap-3 flex-col items-center justify-center lg:hidden'>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
-          <WineryCard winery={bodegasRandomOrder[0]} />
-          <WineryCard winery={bodegasRandomOrder[1]} />
-          <WineryCard winery={bodegasRandomOrder[2]} />
-          <WineryCard winery={bodegasRandomOrder[3]} />
-          <WineryCard winery={bodegasRandomOrder[4]} />
-          <WineryCard winery={bodegasRandomOrder[5]} />
-        </div>
-        <WineryCard winery={bodegasRandomOrder[6]} />     
-      </div>
-
-      <div className='lg:flex gap-3 flex-col items-center justify-center hidden 2xl:hidden'>
-        <div className="grid grid-cols-4 gap-3 text-left">
-          <WineryCard winery={bodegasRandomOrder[0]} />
-          <WineryCard winery={bodegasRandomOrder[1]} />
-          <WineryCard winery={bodegasRandomOrder[2]} />
-          <WineryCard winery={bodegasRandomOrder[3]} />
-        </div>
-        <div className="grid grid-cols-3 gap-2 text-left">
-          <WineryCard winery={bodegasRandomOrder[4]} />
-          <WineryCard winery={bodegasRandomOrder[5]} />
-          <WineryCard winery={bodegasRandomOrder[6]} />     
-        </div>
-      </div>
-
-      <div className='2xl:flex gap-3 flex-col items-center justify-center hidden'>
-        <div className="grid grid-cols-7 gap-3 text-left">
-          <WineryCard winery={bodegasRandomOrder[0]} />
-          <WineryCard winery={bodegasRandomOrder[1]} />
-          <WineryCard winery={bodegasRandomOrder[2]} />
-          <WineryCard winery={bodegasRandomOrder[3]} />
-          <WineryCard winery={bodegasRandomOrder[4]} />
-          <WineryCard winery={bodegasRandomOrder[5]} />
-          <WineryCard winery={bodegasRandomOrder[6]} />     
-        </div>
-      </div>
-
-      <Refresh />
+      
+      <WineryList initialData={bodegas} />
 
     </main>
   )
