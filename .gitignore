@@ -1,7 +1,7 @@
 # Agregado por RC
 bun.lockb
 .env
-
+pnpm-lock.yaml
 #####################################3
 
 # dependencies

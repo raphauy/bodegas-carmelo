@@ -26,7 +26,7 @@ const bodegas: Winery[] = [
     url: 'https://www.instagram.com/almacen_de_la_capilla',
   },
   {
-    name: 'Finca Buenavista',
+    name: 'Finca Buena Vista',
     description: 'Lorem ipsun para Finca Buenavista',
     image: '/fincabuenavista.jpg',
     url: 'https://www.instagram.com/buenavistacarmelo',
