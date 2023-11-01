@@ -1,6 +1,16 @@
+import { revalidatePath } from 'next/cache'
 import WineryCard from './winery-card'
+import { redirect } from 'next/navigation'
+import Refresh from './refresh'
 
-const bodegas = [
+export type Winery = {
+  name: string
+  description: string
+  image: string
+  url: string
+}
+
+const bodegas: Winery[] = [
   {
     name: 'El Legado Bodega Boutique',
     description: 'Lorem ipsun para El Legado',
@@ -47,7 +57,9 @@ const bodegas = [
 
 export default function Home() {
 
-  const bodegasRandomOrder = bodegas.sort(() => Math.random() - 0.5)
+  let bodegasRandomOrder = bodegas.sort(() => Math.random() - 0.5)
+
+  console.log("Rendering...");
 
   return (
     <main className="min-h-screen p-3 flex items-center justify-center">
@@ -89,6 +101,8 @@ export default function Home() {
           <WineryCard winery={bodegasRandomOrder[6]} />     
         </div>
       </div>
+
+      <Refresh />
 
     </main>
   )

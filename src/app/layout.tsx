@@ -4,6 +4,7 @@ import { ThemeToggle } from '@/components/shadcn/theme-toggle'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { GeistSans, GeistMono } from "geist/font";
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
 
   return (
-    <html lang="en">
-      <body className={cn(inter.className, "dark:bg-black")}>
+    <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={cn("dark:bg-black")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <div className="fixed bottom-0 right-0">

@@ -1,14 +1,10 @@
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Winery } from './page';
 
 interface Props {
-    winery: {
-        name: string;
-        description: string;
-        image: string;
-        url: string;
-    };
+    winery: Winery
 }
 
 export default function WineryCard({ winery: { name, description, image, url } }: Props) {
