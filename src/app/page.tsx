@@ -53,7 +53,7 @@ const bodegas: Winery[] = [
     name: 'Pueblo Tannat',
     description: 'Lorem ipsun para Pueblo Tannat',
     image: '/pueblotannat.jpg',
-    url: 'https://www.pueblotannat.com.uy',
+    url: 'https://www.instagram.com/pueblo_tannat',
   },
 ]
 

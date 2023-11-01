@@ -1,6 +1,5 @@
 "use client"
 
-import { useRouter } from "next/navigation"
 import WineryCard from "./winery-card"
 import { useEffect, useState } from "react"
 import { Winery } from "./page"
@@ -16,7 +15,6 @@ export default function WineryList({ initialData }: Props) {
     const [counter, setCounter] = useState(0)
 
 
-    // update counter every 10 seconds, maximum 20 times
     useEffect(() => {
         const interval = setInterval(() => {
             setCounter((prev) => {
@@ -39,6 +37,7 @@ export default function WineryList({ initialData }: Props) {
 
     return (
         <>
+
             <div className='flex gap-3 flex-col items-center justify-center lg:hidden'>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
                 <WineryCard winery={bodegas[0]} />
