@@ -15,11 +15,22 @@ export default function WineryList({ initialData }: Props) {
 
     const [counter, setCounter] = useState(0)
 
-    console.log("Client rendering...")    
 
-    setTimeout(() => {        
-        setCounter(counter + 1)      
-    }, 10000)
+    // update counter every 10 seconds, maximum 20 times
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounter((prev) => {
+                
+                if (prev < 20) {
+                    console.log(`Refreshing ${prev} times`)
+                    return prev + 1
+                } else {
+                    return prev
+                }
+            })
+        }, 10000)
+        return () => clearInterval(interval)
+    }, [])
 
     useEffect(() => {
         
