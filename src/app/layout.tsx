@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { TailwindIndicator } from '@/components/shadcn/tailwind-indicator'
 import { ThemeProvider } from '@/components/shadcn/theme-provider'
 import { ThemeToggle } from '@/components/shadcn/theme-toggle'
@@ -31,6 +32,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={cn("dark:bg-black")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Analytics />
           <div className="fixed bottom-0 right-0">
             <ThemeToggle />
           </div>
